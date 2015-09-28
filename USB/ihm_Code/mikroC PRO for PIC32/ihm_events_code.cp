@@ -1,5 +1,5 @@
-#line 1 "C:/Users/Amaury LAURENT/Desktop/demo_pic32/ihm_Code/mikroC PRO for PIC32/ihm_events_code.c"
-#line 1 "c:/users/amaury laurent/desktop/demo_pic32/ihm_code/mikroc pro for pic32/ihm_objects.h"
+#line 1 "J:/SAPHIR/LUGE_IhmTactile/Pipboy/USB/ihm_Code/mikroC PRO for PIC32/ihm_events_code.c"
+#line 1 "j:/saphir/luge_ihmtactile/pipboy/usb/ihm_code/mikroc pro for pic32/ihm_objects.h"
 typedef enum {_taLeft, _taCenter, _taRight} TTextAlign;
 typedef enum {_tavTop, _tavMiddle, _tavBottom} TTextAlignVertical;
 
@@ -121,10 +121,10 @@ void Start_TP();
 void Process_TP_Press(unsigned int X, unsigned int Y);
 void Process_TP_Up(unsigned int X, unsigned int Y);
 void Process_TP_Down(unsigned int X, unsigned int Y);
-#line 1 "c:/users/amaury laurent/desktop/demo_pic32/ihm_code/mikroc pro for pic32/ihm_resources.h"
+#line 1 "j:/saphir/luge_ihmtactile/pipboy/usb/ihm_code/mikroc pro for pic32/ihm_resources.h"
 const code char Tahoma11x13_Regular[];
 const code char logo_bmp[25318];
-#line 4 "C:/Users/Amaury LAURENT/Desktop/demo_pic32/ihm_Code/mikroC PRO for PIC32/ihm_events_code.c"
+#line 4 "J:/SAPHIR/LUGE_IhmTactile/Pipboy/USB/ihm_Code/mikroC PRO for PIC32/ihm_events_code.c"
 extern char * ReadBuffer, WriteBuffer;
 
 

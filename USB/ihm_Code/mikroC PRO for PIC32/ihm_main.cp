@@ -1,5 +1,5 @@
-#line 1 "C:/Users/Amaury LAURENT/Desktop/demo_pic32/ihm_Code/mikroC PRO for PIC32/ihm_main.c"
-#line 1 "c:/users/amaury laurent/desktop/demo_pic32/ihm_code/mikroc pro for pic32/ihm_objects.h"
+#line 1 "J:/SAPHIR/LUGE_IhmTactile/Pipboy/USB/ihm_Code/mikroC PRO for PIC32/ihm_main.c"
+#line 1 "j:/saphir/luge_ihmtactile/pipboy/usb/ihm_code/mikroc pro for pic32/ihm_objects.h"
 typedef enum {_taLeft, _taCenter, _taRight} TTextAlign;
 typedef enum {_tavTop, _tavMiddle, _tavBottom} TTextAlignVertical;
 
@@ -121,10 +121,10 @@ void Start_TP();
 void Process_TP_Press(unsigned int X, unsigned int Y);
 void Process_TP_Up(unsigned int X, unsigned int Y);
 void Process_TP_Down(unsigned int X, unsigned int Y);
-#line 1 "c:/users/amaury laurent/desktop/demo_pic32/ihm_code/mikroc pro for pic32/ihm_resources.h"
+#line 1 "j:/saphir/luge_ihmtactile/pipboy/usb/ihm_code/mikroc pro for pic32/ihm_resources.h"
 const code char Tahoma11x13_Regular[];
 const code char logo_bmp[25318];
-#line 1 "c:/users/amaury laurent/desktop/demo_pic32/ihm_code/mikroc pro for pic32/usbdsc.c"
+#line 1 "j:/saphir/luge_ihmtactile/pipboy/usb/ihm_code/mikroc pro for pic32/usbdsc.c"
 const unsigned int USB_VENDOR_ID = 0x003F;
 const unsigned int USB_PRODUCT_ID = 0x04D8;
 const char USB_SELF_POWER = 0x80;
@@ -291,7 +291,7 @@ void USB_Init_Desc(){
  USB_string_dsc_ptr[1] = (const char*)&strd2;
  USB_string_dsc_ptr[2] = (const char*)&strd3;
 }
-#line 28 "C:/Users/Amaury LAURENT/Desktop/demo_pic32/ihm_Code/mikroC PRO for PIC32/ihm_main.c"
+#line 28 "J:/SAPHIR/LUGE_IhmTactile/Pipboy/USB/ihm_Code/mikroC PRO for PIC32/ihm_main.c"
 char ind1 = 0, ind1_old = 1;
 char ind2 = 0, ind2_old = 1;
 int ind_num = 0, ind_num_old = 1;
@@ -327,7 +327,7 @@ void DrawIconName(int xx, int yy) {
  yd = (y+yy*dy)-16;
  TFT_Set_Brush(1, CL_WHITE, 0, 0, 0, 0);
  TFT_Set_Pen(CL_WHITE, 0);
- TFT_Rectangle(xd-18, yd+32, xd-18 + 68, yd+32 + 15);
+ TFT_Rectangle(xd-18, yd+32, xd-18 + 68, yd+32 + 20);
  TFT_Set_Font(TFT_defaultFont, CL_BLACK, FO_HORIZONTAL);
  TFT_Write_Text(Image_text, xd-18, yd+32);
 }
@@ -427,6 +427,14 @@ void main() {
  image_to_draw = ReadBuffer[strlen("AT+DRAW_ICON_NAME=")]-'0';
  DrawIconName(image_to_draw%4, image_to_draw/4);
  strcpy(WriteBuffer, "OK\r\n");
+ HID_Write(WriteBuffer, 64 );
+ }
+ else if (strstr(&ReadBuffer, "PING")) {
+ strcpy(WriteBuffer, "PONG\r\n");
+ HID_Write(WriteBuffer, 64 );
+ }
+ else {
+ strcpy(WriteBuffer, "UNKNOWN\r\n");
  HID_Write(WriteBuffer, 64 );
  }
  }

@@ -27,13 +27,14 @@ Count=0
 Count=0
 ActiveImageIndex=-1
 [OPENED_FILES]
-Count=6
+Count=7
 File0=ihm_main.c
 File1=ihm_resources.c
 File2=ihm_driver.c
 File3=ihm_resources.h
 File4=ihm_objects.h
 File5=ihm_events_code.c
+File6=USBdsc.c
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
@@ -41,13 +42,13 @@ Count=0
 [OTHER_FILES]
 Count=0
 [SEARCH_PATH]
-Count=4
+Count=3
 Path0=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC32\Defs\
 Path1=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC32\Uses\
-Path2=C:\Users\Amaury LAURENT\Desktop\demo_pic32\ihm_Code\mikroC PRO for PIC32\
+Path2=J:\SAPHIR\LUGE_IhmTactile\Pipboy\USB\ihm_Code\mikroC PRO for PIC32\
 [HEADER_PATH]
-Count=2
-Path1=C:\Users\Amaury LAURENT\Desktop\demo_pic32\ihm_Code\mikroC PRO for PIC32\
+Count=1
+Path0=J:\SAPHIR\LUGE_IhmTactile\Pipboy\USB\ihm_Code\mikroC PRO for PIC32\
 [HEADERS]
 Count=2
 File0=ihm_objects.h

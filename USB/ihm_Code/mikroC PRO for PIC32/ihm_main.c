@@ -60,7 +60,7 @@ void DrawIconName(int xx, int yy) {
   yd = (y+yy*dy)-16;
   TFT_Set_Brush(1, CL_WHITE, 0, 0, 0, 0);
   TFT_Set_Pen(CL_WHITE, 0);
-  TFT_Rectangle(xd-18, yd+32, xd-18 + 68, yd+32 + 15);
+  TFT_Rectangle(xd-18, yd+32, xd-18 + 68, yd+32 + 20);
   TFT_Set_Font(TFT_defaultFont, CL_BLACK, FO_HORIZONTAL);//CL_BLACK;
   TFT_Write_Text(Image_text, xd-18, yd+32);
 }
@@ -106,7 +106,7 @@ void main() {
   EnableInterrupts();
 
   Start_TP();
-  
+
   ClearBuffer(ReadBuffer, USB_LENGTH);
   ClearBuffer(WriteBuffer, USB_LENGTH);
   HID_Enable(ReadBuffer, &WriteBuffer);
@@ -160,6 +160,14 @@ void main() {
             image_to_draw = ReadBuffer[strlen("AT+DRAW_ICON_NAME=")]-'0';
             DrawIconName(image_to_draw%4, image_to_draw/4);
             strcpy(WriteBuffer, "OK\r\n");
+            HID_Write(WriteBuffer,USB_LENGTH);
+       }
+       else if (strstr(&ReadBuffer, "PING")) {
+            strcpy(WriteBuffer, "PONG\r\n");
+            HID_Write(WriteBuffer,USB_LENGTH);
+       }
+       else {
+            strcpy(WriteBuffer, "UNKNOWN\r\n");
             HID_Write(WriteBuffer,USB_LENGTH);
        }
     }

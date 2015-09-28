@@ -1,4 +1,4 @@
-#line 1 "C:/Users/Amaury LAURENT/Desktop/demo_pic32/ihm_Code/mikroC PRO for PIC32/ihm_resources.c"
+#line 1 "J:/SAPHIR/LUGE_IhmTactile/Pipboy/USB/ihm_Code/mikroC PRO for PIC32/ihm_resources.c"
 const code char Tahoma11x13_Regular[] = {
  0x00,
  0x00,

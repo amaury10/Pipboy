@@ -71,11 +71,11 @@ L_ClearBuffer0:
 SEH	R3, R4
 SEH	R2, R26
 SLT	R2, R3, R2
-BNE	R2, R0, L__ClearBuffer40
+BNE	R2, R0, L__ClearBuffer43
 NOP	
 J	L_ClearBuffer1
 NOP	
-L__ClearBuffer40:
+L__ClearBuffer43:
 SEH	R2, R4
 ADDU	R2, R25, R2
 SB	R0, 0(R2)
@@ -130,9 +130,9 @@ MOVZ	R26, R0, R0
 ORI	R25, R0, 65535
 JAL	_TFT_Set_Pen+0
 NOP	
-;ihm_main.c,63 :: 		TFT_Rectangle(xd-18, yd+32, xd-18 + 68, yd+32 + 15);
+;ihm_main.c,63 :: 		TFT_Rectangle(xd-18, yd+32, xd-18 + 68, yd+32 + 20);
 ADDIU	R5, R7, 32
-ADDIU	R4, R5, 15
+ADDIU	R4, R5, 20
 ADDIU	R3, R6, -18
 ADDIU	R2, R3, 68
 SH	R7, 20(SP)
@@ -207,11 +207,11 @@ L_DrawIcon3:
 ; xd start address is: 20 (R5)
 SEH	R2, R7
 SLTI	R2, R2, 32
-BNE	R2, R0, L__DrawIcon43
+BNE	R2, R0, L__DrawIcon46
 NOP	
 J	L_DrawIcon4
 NOP	
-L__DrawIcon43:
+L__DrawIcon46:
 ;ihm_main.c,84 :: 		for(j=0; j<32; j++) {
 ; j start address is: 32 (R8)
 MOVZ	R8, R0, R0
@@ -226,11 +226,11 @@ L_DrawIcon6:
 ; i start address is: 28 (R7)
 SEH	R2, R8
 SLTI	R2, R2, 32
-BNE	R2, R0, L__DrawIcon44
+BNE	R2, R0, L__DrawIcon47
 NOP	
 J	L_DrawIcon7
 NOP	
-L__DrawIcon44:
+L__DrawIcon47:
 ;ihm_main.c,85 :: 		TFT_Dot(xd+i, yd+j, Image_icon[j*32+i]);
 SEH	R2, R8
 SLL	R2, R2, 5
@@ -348,11 +348,11 @@ L_main9:
 ; i start address is: 20 (R5)
 SEH	R2, R5
 SLTI	R2, R2, 2
-BNE	R2, R0, L__main46
+BNE	R2, R0, L__main49
 NOP	
 J	L_main10
 NOP	
-L__main46:
+L__main49:
 ;ihm_main.c,115 :: 		for(j=0; j<4; j++) {
 ; j start address is: 16 (R4)
 MOVZ	R4, R0, R0
@@ -365,11 +365,11 @@ L_main12:
 ; i start address is: 16 (R4)
 SEH	R2, R3
 SLTI	R2, R2, 4
-BNE	R2, R0, L__main47
+BNE	R2, R0, L__main50
 NOP	
 J	L_main13
 NOP	
-L__main47:
+L__main50:
 ;ihm_main.c,116 :: 		DrawIcon(j, i);
 SH	R4, 0(SP)
 SH	R3, 2(SP)
@@ -407,11 +407,11 @@ NOP
 ;ihm_main.c,122 :: 		if (HID_Read()) {
 JAL	_HID_Read+0
 NOP	
-BNE	R2, R0, L__main49
+BNE	R2, R0, L__main52
 NOP	
 J	L_main17
 NOP	
-L__main49:
+L__main52:
 ;ihm_main.c,123 :: 		ClearBuffer(WriteBuffer, USB_LENGTH);
 ORI	R26, R0, 64
 LUI	R25, hi_addr(_WriteBuffer+0)
@@ -425,11 +425,11 @@ LUI	R25, hi_addr(_ReadBuffer+0)
 ORI	R25, R25, lo_addr(_ReadBuffer+0)
 JAL	_strstr+0
 NOP	
-BNE	R2, R0, L__main51
+BNE	R2, R0, L__main54
 NOP	
 J	L_main18
 NOP	
-L__main51:
+L__main54:
 ;ihm_main.c,125 :: 		strcpy(WriteBuffer, "READY\r\n");
 LUI	R26, hi_addr(?lstr2_ihm_main+0)
 ORI	R26, R26, lo_addr(?lstr2_ihm_main+0)
@@ -452,19 +452,19 @@ L_main18:
 ;ihm_main.c,130 :: 		else if ((receive_block>=0)&&(receive_block<2048)) {
 LH	R2, 4(SP)
 SLTI	R2, R2, 0
-BEQ	R2, R0, L__main52
+BEQ	R2, R0, L__main55
 NOP	
-J	L__main36
+J	L__main39
 NOP	
-L__main52:
+L__main55:
 LH	R2, 4(SP)
 SLTI	R2, R2, 2048
-BNE	R2, R0, L__main53
+BNE	R2, R0, L__main56
 NOP	
-J	L__main35
+J	L__main38
 NOP	
-L__main53:
-L__main34:
+L__main56:
+L__main37:
 ;ihm_main.c,131 :: 		memcpy((char *)Image_icon+receive_block, ReadBuffer, USB_LENGTH);
 LH	R3, 4(SP)
 LUI	R2, hi_addr(_Image_icon+0)
@@ -483,11 +483,11 @@ SH	R2, 4(SP)
 ;ihm_main.c,133 :: 		if(receive_block > 2048-USB_LENGTH) strcpy(WriteBuffer, "FINISH\r\n");
 SEH	R2, R2
 SLTI	R2, R2, 1985
-BEQ	R2, R0, L__main54
+BEQ	R2, R0, L__main57
 NOP	
 J	L_main23
 NOP	
-L__main54:
+L__main57:
 LUI	R26, hi_addr(?lstr3_ihm_main+0)
 ORI	R26, R26, lo_addr(?lstr3_ihm_main+0)
 LUI	R25, hi_addr(_WriteBuffer+0)
@@ -515,8 +515,8 @@ NOP
 J	L_main25
 NOP	
 ;ihm_main.c,130 :: 		else if ((receive_block>=0)&&(receive_block<2048)) {
-L__main36:
-L__main35:
+L__main39:
+L__main38:
 ;ihm_main.c,139 :: 		else if (strstr(&ReadBuffer, "AT+DRAW_IMAGE=")) {
 LUI	R26, hi_addr(?lstr5_ihm_main+0)
 ORI	R26, R26, lo_addr(?lstr5_ihm_main+0)
@@ -524,11 +524,11 @@ LUI	R25, hi_addr(_ReadBuffer+0)
 ORI	R25, R25, lo_addr(_ReadBuffer+0)
 JAL	_strstr+0
 NOP	
-BNE	R2, R0, L__main56
+BNE	R2, R0, L__main59
 NOP	
 J	L_main26
 NOP	
-L__main56:
+L__main59:
 ;ihm_main.c,140 :: 		image_to_draw = ReadBuffer[strlen("AT+DRAW_IMAGE=")]-'0';
 LUI	R25, hi_addr(?lstr6_ihm_main+0)
 ORI	R25, R25, lo_addr(?lstr6_ihm_main+0)
@@ -575,11 +575,11 @@ LUI	R25, hi_addr(_ReadBuffer+0)
 ORI	R25, R25, lo_addr(_ReadBuffer+0)
 JAL	_strstr+0
 NOP	
-BNE	R2, R0, L__main58
+BNE	R2, R0, L__main61
 NOP	
 J	L_main28
 NOP	
-L__main58:
+L__main61:
 ;ihm_main.c,146 :: 		PageNumber.Font_Color=CL_WHITE;
 ORI	R2, R0, 65535
 SH	R2, Offset(_PageNumber+24)(GP)
@@ -633,11 +633,11 @@ LUI	R25, hi_addr(_ReadBuffer+0)
 ORI	R25, R25, lo_addr(_ReadBuffer+0)
 JAL	_strstr+0
 NOP	
-BNE	R2, R0, L__main60
+BNE	R2, R0, L__main63
 NOP	
 J	L_main30
 NOP	
-L__main60:
+L__main63:
 ;ihm_main.c,155 :: 		strncpy(Image_text, &ReadBuffer + strlen("AT+SET_ICON_NAME="), 29);
 LUI	R25, hi_addr(?lstr12_ihm_main+0)
 ORI	R25, R25, lo_addr(?lstr12_ihm_main+0)
@@ -677,11 +677,11 @@ LUI	R25, hi_addr(_ReadBuffer+0)
 ORI	R25, R25, lo_addr(_ReadBuffer+0)
 JAL	_strstr+0
 NOP	
-BNE	R2, R0, L__main62
+BNE	R2, R0, L__main65
 NOP	
 J	L_main32
 NOP	
-L__main62:
+L__main65:
 ;ihm_main.c,160 :: 		image_to_draw = ReadBuffer[strlen("AT+DRAW_ICON_NAME=")]-'0';
 LUI	R25, hi_addr(?lstr15_ihm_main+0)
 ORI	R25, R25, lo_addr(?lstr15_ihm_main+0)
@@ -718,35 +718,82 @@ ORI	R25, R25, lo_addr(_WriteBuffer+0)
 JAL	_HID_Write+0
 NOP	
 ;ihm_main.c,164 :: 		}
+J	L_main33
+NOP	
 L_main32:
+;ihm_main.c,165 :: 		else if (strstr(&ReadBuffer, "PING")) {
+LUI	R26, hi_addr(?lstr17_ihm_main+0)
+ORI	R26, R26, lo_addr(?lstr17_ihm_main+0)
+LUI	R25, hi_addr(_ReadBuffer+0)
+ORI	R25, R25, lo_addr(_ReadBuffer+0)
+JAL	_strstr+0
+NOP	
+BNE	R2, R0, L__main67
+NOP	
+J	L_main34
+NOP	
+L__main67:
+;ihm_main.c,166 :: 		strcpy(WriteBuffer, "PONG\r\n");
+LUI	R26, hi_addr(?lstr18_ihm_main+0)
+ORI	R26, R26, lo_addr(?lstr18_ihm_main+0)
+LUI	R25, hi_addr(_WriteBuffer+0)
+ORI	R25, R25, lo_addr(_WriteBuffer+0)
+JAL	_strcpy+0
+NOP	
+;ihm_main.c,167 :: 		HID_Write(WriteBuffer,USB_LENGTH);
+ORI	R26, R0, 64
+LUI	R25, hi_addr(_WriteBuffer+0)
+ORI	R25, R25, lo_addr(_WriteBuffer+0)
+JAL	_HID_Write+0
+NOP	
+;ihm_main.c,168 :: 		}
+J	L_main35
+NOP	
+L_main34:
+;ihm_main.c,170 :: 		strcpy(WriteBuffer, "UNKNOWN\r\n");
+LUI	R26, hi_addr(?lstr19_ihm_main+0)
+ORI	R26, R26, lo_addr(?lstr19_ihm_main+0)
+LUI	R25, hi_addr(_WriteBuffer+0)
+ORI	R25, R25, lo_addr(_WriteBuffer+0)
+JAL	_strcpy+0
+NOP	
+;ihm_main.c,171 :: 		HID_Write(WriteBuffer,USB_LENGTH);
+ORI	R26, R0, 64
+LUI	R25, hi_addr(_WriteBuffer+0)
+ORI	R25, R25, lo_addr(_WriteBuffer+0)
+JAL	_HID_Write+0
+NOP	
+;ihm_main.c,172 :: 		}
+L_main35:
+L_main33:
 L_main31:
 L_main29:
 L_main27:
 L_main25:
 L_main19:
-;ihm_main.c,165 :: 		}
+;ihm_main.c,173 :: 		}
 L_main17:
-;ihm_main.c,166 :: 		ClearBuffer(&ReadBuffer, USB_LENGTH);
+;ihm_main.c,174 :: 		ClearBuffer(&ReadBuffer, USB_LENGTH);
 ORI	R26, R0, 64
 LUI	R25, hi_addr(_ReadBuffer+0)
 ORI	R25, R25, lo_addr(_ReadBuffer+0)
 JAL	_ClearBuffer+0
 NOP	
-;ihm_main.c,167 :: 		if(receive_block > 2048-USB_LENGTH) receive_block = -1;
+;ihm_main.c,175 :: 		if(receive_block > 2048-USB_LENGTH) receive_block = -1;
 LH	R2, 4(SP)
 SLTI	R2, R2, 1985
-BEQ	R2, R0, L__main63
+BEQ	R2, R0, L__main68
 NOP	
-J	L_main33
+J	L_main36
 NOP	
-L__main63:
+L__main68:
 ORI	R2, R0, 65535
 SH	R2, 4(SP)
-L_main33:
-;ihm_main.c,168 :: 		}
+L_main36:
+;ihm_main.c,176 :: 		}
 J	L_main15
 NOP	
-;ihm_main.c,169 :: 		}
+;ihm_main.c,177 :: 		}
 L_end_main:
 L__main_end_loop:
 J	L__main_end_loop

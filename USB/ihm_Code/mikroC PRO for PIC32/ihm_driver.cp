@@ -1,5 +1,5 @@
-#line 1 "C:/Users/Amaury LAURENT/Desktop/demo_pic32/ihm_Code/mikroC PRO for PIC32/ihm_driver.c"
-#line 1 "c:/users/amaury laurent/desktop/demo_pic32/ihm_code/mikroc pro for pic32/ihm_objects.h"
+#line 1 "J:/SAPHIR/LUGE_IhmTactile/Pipboy/USB/ihm_Code/mikroC PRO for PIC32/ihm_driver.c"
+#line 1 "j:/saphir/luge_ihmtactile/pipboy/usb/ihm_code/mikroc pro for pic32/ihm_objects.h"
 typedef enum {_taLeft, _taCenter, _taRight} TTextAlign;
 typedef enum {_tavTop, _tavMiddle, _tavBottom} TTextAlignVertical;
 
@@ -121,11 +121,11 @@ void Start_TP();
 void Process_TP_Press(unsigned int X, unsigned int Y);
 void Process_TP_Up(unsigned int X, unsigned int Y);
 void Process_TP_Down(unsigned int X, unsigned int Y);
-#line 1 "c:/users/amaury laurent/desktop/demo_pic32/ihm_code/mikroc pro for pic32/ihm_resources.h"
+#line 1 "j:/saphir/luge_ihmtactile/pipboy/usb/ihm_code/mikroc pro for pic32/ihm_resources.h"
 const code char Tahoma11x13_Regular[];
 const code char logo_bmp[25318];
 #line 1 "c:/users/public/documents/mikroelektronika/mikroc pro for pic32/include/built_in.h"
-#line 7 "C:/Users/Amaury LAURENT/Desktop/demo_pic32/ihm_Code/mikroC PRO for PIC32/ihm_driver.c"
+#line 7 "J:/SAPHIR/LUGE_IhmTactile/Pipboy/USB/ihm_Code/mikroC PRO for PIC32/ihm_driver.c"
 char TFT_DataPort at LATE;
 sbit TFT_RST at LATC1_bit;
 sbit TFT_BLED at LATA9_bit;
@@ -227,7 +227,7 @@ void Calibrate() {
  TFT_Line(319, 5, 319, 1);
  TFT_Write_Text("first here", 230, 20);
  TFT_Image(47, 90, logo_bmp, 1);
-#line 127 "C:/Users/Amaury LAURENT/Desktop/demo_pic32/ihm_Code/mikroC PRO for PIC32/ihm_driver.c"
+#line 127 "J:/SAPHIR/LUGE_IhmTactile/Pipboy/USB/ihm_Code/mikroC PRO for PIC32/ihm_driver.c"
  TP_TFT_Calibrate_Min();
  Delay_ms(500);
 
