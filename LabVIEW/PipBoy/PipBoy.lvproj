@@ -659,6 +659,10 @@
 			<Item Name="vault_boy_vector_by_warnerator-d318mok.jpg" Type="Document" URL="../icons/vault_boy_vector_by_warnerator-d318mok.jpg"/>
 		</Item>
 		<Item Name="modules" Type="Folder">
+			<Item Name="PaletteEditor" Type="Folder">
+				<Item Name="PIPBOY_Ctl_Td_PaletteItem.ctl" Type="VI" URL="../modules/PaletteEditor/PIPBOY_Ctl_Td_PaletteItem.ctl"/>
+				<Item Name="PIPBOY_Dlg_MainUi.vi" Type="VI" URL="../modules/PaletteEditor/PIPBOY_Dlg_MainUi.vi"/>
+			</Item>
 			<Item Name="PIC18F4550 USB LVLIB" Type="Folder">
 				<Item Name="Choose_USB.vi" Type="VI" URL="../modules/PIC18F4550 USB LVLIB/Choose_USB.vi"/>
 				<Item Name="Close_USB.vi" Type="VI" URL="../modules/PIC18F4550 USB LVLIB/Close_USB.vi"/>
@@ -791,6 +795,16 @@
 				<Item Name="Write INI Cluster__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/variantconfig/variantconfig.llb/Write INI Cluster__ogtk.vi"/>
 				<Item Name="Write Key (Variant)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/variantconfig/variantconfig.llb/Write Key (Variant)__ogtk.vi"/>
 				<Item Name="Write Section Cluster__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/variantconfig/variantconfig.llb/Write Section Cluster__ogtk.vi"/>
+				<Item Name="XXX_Tlk_Tree-AddElement__saphir_lib_vbx.vi" Type="VI" URL="/&lt;userlib&gt;/_saphir_lib_vbx.llb/XXX_Tlk_Tree-AddElement__saphir_lib_vbx.vi"/>
+				<Item Name="XXX_Tlk_Tree-AddElement_Array__saphir_lib_vbx.vi" Type="VI" URL="/&lt;userlib&gt;/_saphir_lib_vbx.llb/XXX_Tlk_Tree-AddElement_Array__saphir_lib_vbx.vi"/>
+				<Item Name="XXX_Tlk_Tree-AddElement_Scalar__saphir_lib_vbx.vi" Type="VI" URL="/&lt;userlib&gt;/_saphir_lib_vbx.llb/XXX_Tlk_Tree-AddElement_Scalar__saphir_lib_vbx.vi"/>
+				<Item Name="XXX_Tlk_Tree-Cleanup__saphir_lib_vbx.vi" Type="VI" URL="/&lt;userlib&gt;/_saphir_lib_vbx.llb/XXX_Tlk_Tree-Cleanup__saphir_lib_vbx.vi"/>
+				<Item Name="XXX_Tlk_Tree-Cleanup_Array__saphir_lib_vbx.vi" Type="VI" URL="/&lt;userlib&gt;/_saphir_lib_vbx.llb/XXX_Tlk_Tree-Cleanup_Array__saphir_lib_vbx.vi"/>
+				<Item Name="XXX_Tlk_Tree-Cleanup_Scalar__saphir_lib_vbx.vi" Type="VI" URL="/&lt;userlib&gt;/_saphir_lib_vbx.llb/XXX_Tlk_Tree-Cleanup_Scalar__saphir_lib_vbx.vi"/>
+				<Item Name="XXX_Tlk_Tree-GetItemPosition__saphir_lib_vbx.vi" Type="VI" URL="/&lt;userlib&gt;/_saphir_lib_vbx.llb/XXX_Tlk_Tree-GetItemPosition__saphir_lib_vbx.vi"/>
+				<Item Name="XXX_Tlk_Tree-GetItemPosition_Array__saphir_lib_vbx.vi" Type="VI" URL="/&lt;userlib&gt;/_saphir_lib_vbx.llb/XXX_Tlk_Tree-GetItemPosition_Array__saphir_lib_vbx.vi"/>
+				<Item Name="XXX_Tlk_Tree-GetItemPosition_Scalar__saphir_lib_vbx.vi" Type="VI" URL="/&lt;userlib&gt;/_saphir_lib_vbx.llb/XXX_Tlk_Tree-GetItemPosition_Scalar__saphir_lib_vbx.vi"/>
+				<Item Name="XXX_Tlk_Tree-SetText_Scalar__saphir_lib_vbx.vi" Type="VI" URL="/&lt;userlib&gt;/_saphir_lib_vbx.llb/XXX_Tlk_Tree-SetText_Scalar__saphir_lib_vbx.vi"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
